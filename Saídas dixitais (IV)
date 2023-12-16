@@ -1,0 +1,24 @@
+// C++ code
+//
+int Contador = 0;
+
+void setup()
+{
+  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(11, OUTPUT);
+}
+
+void loop()
+{
+  digitalWrite(LED_BUILTIN, HIGH);
+  delay(10000); // Wait for 10000 millisecond(s)//O led integrado se encende durante 10 segundos//
+  digitalWrite(LED_BUILTIN, LOW);
+  delay(4000); // Wait for 4000 millisecond(s)//O led integrado apagase e pasados 4 segundos acivanse os pins 11 e 12 para activar o led e o rele durante 10 segundos// 
+  digitalWrite(12, HIGH);
+  digitalWrite(11, HIGH);
+  delay(10000); // Wait for 10000 millisecond(s)//Pasados os 10 segundos desactianse os pins 11 e 12//
+  digitalWrite(12, LOW);
+  digitalWrite(11, LOW);
+  delay(4000); // Wait for 4000 millisecond(s)//Ao desactivarse os pins e pasar 4 segundos, volve a repetirse o proceso//
+}
